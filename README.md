@@ -1,6 +1,7 @@
 Generador de Informes de Archivos
 ====================
 
+```
 Proyecto
 De acuerdo a los archivos que se pasen como parámetros, el programa lleva a cabo un
 análisis de apariciones por palabra, palabra más comunes e intersección de palabras entre archivos.
@@ -18,9 +19,9 @@ Ejecución:
 
 ```
 $ mvn test
-...
+```
 $ mvn install
-...
+```
 $ java -jar target/proyecto3 archivos1.extensión archivo2.extensión ... archivoN.extensión -o directorio
 ```
 El directorio es aquél en donde el usuario pretende guardar el resultado del programa.
