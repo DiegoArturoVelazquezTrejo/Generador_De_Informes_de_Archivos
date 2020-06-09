@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang='en'>
+<title>Analizador de Palabras</title>
+<meta charset='UTF-8'>
+<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+<body>
+<div class='w3-container w3-display-container w3-padding-16'>
+<h3 class='w3-wide'><b>Estructuras de Datos</b></h3>
+
+</div>
+<div class='w3-content' style='max-width:2000px;'>
+
+<div class='w3-container w3-content w3-center w3-padding-64' style='max-width:800px' id='band'>
+<h2 class='w3-wide'>Analizador de Palabras</h2>
+<p class='w3-opacity'>
+<i>Ciencias de la Computación: Estructuras de Datos</i></p>
+<p class='w3-justify'>Proyecto de estructuras de datos. Analizador de palabras, que realiza el conteo de palabras por archivo
+y en número de apariciones. Además, la gráfica que se presenta abajo indica cuando dos archivos tienen palabras en común con una
+longitud de caracteres mayor a 7.</p>
+<p class='w3-justify'>Estructuras de Datos utilizadas:</p>
+<br>
+<ol class='w3-wide'><li>Diccionario: Se utilizó para hacer el conteo de apariciones por palabra. </li>
+<li>Listas ligadas: Se utilizaron para ordenar las llaves de los diccionarios. </li>
+<li>Árboles Rojinegros: Se utilizaron para desplegar las apariciones de palabras. </li>
+<li>Árboles Autobalanceables (AVL): Se utilizaron para desplegar las apariciones de palabras. </li>
+<li>Conjuntos: Se utilizaron para hallar la palabras en común entre archivos. </li>
+<li>Gráficas: Se utilizaron para representar a los archivos que comparten palabras. </li>
+</ol></div><div class=' w3-justify w3-container w3-content w3-center w3-padding-64' style='max-width:800px' id='band'>
+<h2>Archivos que se analizaron: </h2><ol>
+<li ><a  href= archivo0.html style='color:blue;'>Ejemplos/amante.py </a> tiene 84 palabras. </li>
+<li ><a  href= archivo1.html style='color:blue;'>Ejemplos/amor.txt </a> tiene 2 palabras. </li>
+<li ><a  href= archivo2.html style='color:blue;'>Ejemplos/entendimiento.c </a> tiene 83 palabras. </li>
+<li ><a  href= archivo3.html style='color:blue;'>Ejemplos/hombres.txt </a> tiene 313 palabras. </li>
+<li ><a  href= archivo4.html style='color:blue;'>Ejemplos/ilision.html </a> tiene 169 palabras. </li>
+<li ><a  href= archivo5.html style='color:blue;'>Ejemplos/retrato.csv </a> tiene 86 palabras. </li>
+<li ><a  href= archivo6.html style='color:blue;'>Ejemplos/rosa.ghci </a> tiene 93 palabras. </li>
+<li ><a  href= archivo7.html style='color:blue;'>src/main/java/mx/unam/ciencias/edd/Lista.java </a> tiene 1757 palabras. </li>
+<li ><a  href= archivo8.html style='color:blue;'>src/main/java/mx/unam/ciencias/edd/ArbolBinarioCompleto.java </a> tiene 472 palabras. </li>
+<li ><a  href= archivo9.html style='color:blue;'>src/main/java/mx/unam/ciencias/edd/Diccionario.java </a> tiene 1221 palabras. </li>
+</ol></div><div class='w3-black' id='tour'><div class='w3-container w3-content w3-padding-64' style='max-width:800px'>
+<h2 class='w3-wide w3-center'>Relación entre archivos (representada por una gráfica)</h2>
+<p class='w3-opacity w3-center'><i>Aquellos que comparten aristas, tienen palabras en común de al menos 7 caracteres.</i></p><br><svg width='650'  height= '650' >
+<circle cx= '500.0' cy= '300.0' r='25' stroke='black' fill='white'  />
+<text x= '500.0' y= '302.0' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>amante.py</text>
+<circle cx= '461.8033988749895' cy= '417.55705045849464' r='25' stroke='black' fill='white'  />
+<text x= '461.8033988749895' y= '419.55705045849464' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>amor.txt</text>
+<circle cx= '361.8033988749895' cy= '490.21130325903073' r='25' stroke='black' fill='white'  />
+<text x= '361.8033988749895' y= '492.21130325903073' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>entendimiento.c</text>
+<circle cx= '238.19660112501055' cy= '490.21130325903073' r='25' stroke='black' fill='white'  />
+<text x= '238.19660112501055' y= '492.21130325903073' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>hombres.txt</text>
+<circle cx= '138.19660112501055' cy= '417.55705045849464' r='25' stroke='black' fill='white'  />
+<text x= '138.19660112501055' y= '419.55705045849464' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>ilision.html</text>
+<circle cx= '100.0' cy= '300.0' r='25' stroke='black' fill='white'  />
+<text x= '100.0' y= '302.0' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>retrato.csv</text>
+<circle cx= '138.1966011250105' cy= '182.4429495415054' r='25' stroke='black' fill='white'  />
+<text x= '138.1966011250105' y= '184.4429495415054' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>rosa.ghci</text>
+<circle cx= '238.1966011250105' cy= '109.7886967409693' r='25' stroke='black' fill='white'  />
+<text x= '238.1966011250105' y= '111.7886967409693' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>Lista.java</text>
+<circle cx= '361.80339887498945' cy= '109.78869674096927' r='25' stroke='black' fill='white'  />
+<text x= '361.80339887498945' y= '111.78869674096927' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>ArbolBinarioCompleto.java</text>
+<circle cx= '461.80339887498945' cy= '182.44294954150533' r='25' stroke='black' fill='white'  />
+<text x= '461.80339887498945' y= '184.44294954150533' text-anchor='middle' fill='red' font-size='15px' font-family='Arial' dy='.1em'>Diccionario.java</text>
+<line x1='361.8033988749895' y1='465.21130325903073' x2='238.19660112501055' y2='465.21130325903073' style='stroke:white; stroke-width:1'></line>
+<line x1='361.8033988749895' y1='465.21130325903073' x2='138.1966011250105' y2='207.4429495415054' style='stroke:white; stroke-width:1'></line>
+<line x1='361.8033988749895' y1='465.21130325903073' x2='361.80339887498945' y2='134.78869674096927' style='stroke:white; stroke-width:1'></line>
+<line x1='238.19660112501055' y1='465.21130325903073' x2='361.8033988749895' y2='465.21130325903073' style='stroke:white; stroke-width:1'></line>
+<line x1='238.19660112501055' y1='465.21130325903073' x2='138.19660112501055' y2='392.55705045849464' style='stroke:white; stroke-width:1'></line>
+<line x1='238.19660112501055' y1='465.21130325903073' x2='100.0' y2='275.0' style='stroke:white; stroke-width:1'></line>
+<line x1='238.19660112501055' y1='465.21130325903073' x2='238.1966011250105' y2='134.7886967409693' style='stroke:white; stroke-width:1'></line>
+<line x1='238.19660112501055' y1='465.21130325903073' x2='361.80339887498945' y2='134.78869674096927' style='stroke:white; stroke-width:1'></line>
+<line x1='238.19660112501055' y1='465.21130325903073' x2='461.80339887498945' y2='207.44294954150533' style='stroke:white; stroke-width:1'></line>
+<line x1='138.19660112501055' y1='392.55705045849464' x2='238.19660112501055' y2='465.21130325903073' style='stroke:white; stroke-width:1'></line>
+<line x1='100.0' y1='275.0' x2='238.19660112501055' y2='465.21130325903073' style='stroke:white; stroke-width:1'></line>
+<line x1='138.1966011250105' y1='207.4429495415054' x2='361.8033988749895' y2='465.21130325903073' style='stroke:white; stroke-width:1'></line>
+<line x1='238.1966011250105' y1='134.7886967409693' x2='238.19660112501055' y2='465.21130325903073' style='stroke:white; stroke-width:1'></line>
+<line x1='238.1966011250105' y1='134.7886967409693' x2='361.80339887498945' y2='134.78869674096927' style='stroke:white; stroke-width:1'></line>
+<line x1='238.1966011250105' y1='134.7886967409693' x2='461.80339887498945' y2='207.44294954150533' style='stroke:white; stroke-width:1'></line>
+<line x1='361.80339887498945' y1='134.78869674096927' x2='361.8033988749895' y2='465.21130325903073' style='stroke:white; stroke-width:1'></line>
+<line x1='361.80339887498945' y1='134.78869674096927' x2='238.19660112501055' y2='465.21130325903073' style='stroke:white; stroke-width:1'></line>
+<line x1='361.80339887498945' y1='134.78869674096927' x2='238.1966011250105' y2='134.7886967409693' style='stroke:white; stroke-width:1'></line>
+<line x1='361.80339887498945' y1='134.78869674096927' x2='461.80339887498945' y2='207.44294954150533' style='stroke:white; stroke-width:1'></line>
+<line x1='461.80339887498945' y1='207.44294954150533' x2='238.19660112501055' y2='465.21130325903073' style='stroke:white; stroke-width:1'></line>
+<line x1='461.80339887498945' y1='207.44294954150533' x2='238.1966011250105' y2='134.7886967409693' style='stroke:white; stroke-width:1'></line>
+<line x1='461.80339887498945' y1='207.44294954150533' x2='361.80339887498945' y2='134.78869674096927' style='stroke:white; stroke-width:1'></line>
+</svg><p class='w3-opacity w3-center'><i>A continuación mostramos las palabras que comparten los archivos. </i></p><br><p class='w3-justify'>Los archivos Ejemplos/entendimiento.c y Ejemplos/hombres.txt tienen en comun las palabras siempre , </p><p class='w3-justify'>Los archivos Ejemplos/entendimiento.c y Ejemplos/rosa.ghci tienen en comun las palabras hermosura , </p><p class='w3-justify'>Los archivos Ejemplos/entendimiento.c y src/main/java/mx/unam/ciencias/edd/ArbolBinarioCompleto.java tienen en comun las palabras siempre , </p><p class='w3-justify'>Los archivos Ejemplos/hombres.txt y Ejemplos/ilision.html tienen en comun las palabras vuestro , </p><p class='w3-justify'>Los archivos Ejemplos/hombres.txt y Ejemplos/retrato.csv tienen en comun las palabras diligencia , </p><p class='w3-justify'>Los archivos Ejemplos/hombres.txt y src/main/java/mx/unam/ciencias/edd/Lista.java tienen en comun las palabras despues , instancia , </p><p class='w3-justify'>Los archivos Ejemplos/hombres.txt y src/main/java/mx/unam/ciencias/edd/ArbolBinarioCompleto.java tienen en comun las palabras siempre , </p><p class='w3-justify'>Los archivos Ejemplos/hombres.txt y src/main/java/mx/unam/ciencias/edd/Diccionario.java tienen en comun las palabras instancia , </p><p class='w3-justify'>Los archivos src/main/java/mx/unam/ciencias/edd/Lista.java y src/main/java/mx/unam/ciencias/edd/ArbolBinarioCompleto.java tienen en comun las palabras private , lo , iteradores , hasnext , interna , privada , ifelemento , javautiliterator , extends , eliminar , eliminat , boolean , implements , package , iteratort , recorrer , override , codeelementocode , regresa , invalido , recibida , iterador , metodo , agregar , mas , elementos , codenullcode , agregat , mxunamcienciasedd , iterator , ultimo , illegalargumentexceptionelemento , int , elimina , construye , elemento , next , agrega , illegalargumentexception , javautilnosuchelementexception , siguiente , </p><p class='w3-justify'>Los archivos src/main/java/mx/unam/ciencias/edd/Lista.java y src/main/java/mx/unam/ciencias/edd/Diccionario.java tienen en comun las palabras boolean , stringformats , esvacia , codefalsecode , package , getelementos , orden , tostring , regresa , nosuchelementexception , iterador , agregar , mas , suppresswarningsunchecked , codetruecode , recibido , mxunamcienciasedd , iterator , static , construye , longitud , illegalargumentexception , representacion , javautilnosuchelementexception , siguiente , private , iteradores , hasnext , interna , privada , javautiliterator , extends , eliminar , implements , equalsobject , override , queremos , elementos , getclass , instancia , elimina , elemento , next , </p><p class='w3-justify'>Los archivos src/main/java/mx/unam/ciencias/edd/ArbolBinarioCompleto.java y src/main/java/mx/unam/ciencias/edd/Diccionario.java tienen en comun las palabras thiselementos , con , private , iteradores , hasnext , param , interna , privada , javautiliterator , auxiliar , extends , un , implementa , eliminar , boolean , implements , package , override , regresa , iterador , metodo , agregar , elementos , coleccion , mxunamcienciasedd , iterator , elimina , construye , elemento , next , agrega , illegalargumentexception , javautilnosuchelementexception , break , siguiente , </p>
+</div>
+</div>
+</div>
+</body>
+</html>
