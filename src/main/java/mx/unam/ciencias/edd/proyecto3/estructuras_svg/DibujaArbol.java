@@ -173,7 +173,7 @@ public class DibujaArbol<T extends Comparable<T>>{
     int coordYNueva = coordYAnterior + 40;
     /* Primero dibujamos el arista del vértice pasado al nuevo vértice */
     String arista;
-    int coordXAux = (v.padre().hayIzquierdo() && v.padre().izquierdo() == v) ? coorXAnterior -12  : coorXAnterior + 12;
+    int coordXAux = (v.padre().hayIzquierdo() && v.padre().izquierdo() == v) ? coorXAnterior -16  : coorXAnterior + 16;
     arista = DibujaElmArbol.dibujaArista(coordXAux, coordYAnterior, xNueva, coordYNueva);
 
     /* Tenemos que meternos en el lío de los colores */

@@ -44,7 +44,7 @@ public class DibujaElmArbol{
       colorletra = "white";
     else
       colorletra = "Black";
-    return "<circle cx= '"+x+"' cy= '"+y+"' r='12' stroke='white' fill='"+color+"'  /> \n<text x= '"+x+"' y= '"+y1+
+    return "<circle cx= '"+x+"' cy= '"+y+"' r='16' stroke='white' fill='"+color+"'  /> \n<text x= '"+x+"' y= '"+y1+
     "' text-anchor='middle' fill='"+ colorletra+"' font-size='10px' font-family='Arial' dy='.1em'>"+
     vertice.get()+"</text>\n";
   }

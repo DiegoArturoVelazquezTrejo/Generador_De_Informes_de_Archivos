@@ -68,12 +68,12 @@ public class ManejaPalabras{
   public String obtieneRojinegro(){
     if(palabras == null || palabras.getLongitud() == 0) return "";
     // Tengo que generar la lista de mayores apariciones
-    Lista<Integer> mayoresApariciones = new Lista<>();
+    Lista<Palabra> mayoresApariciones = new Lista<>();
     Iterator<Palabra> iterador = palabras.iterator();
     int i = 0;
     while(iterador.hasNext() && i < 15){
       Palabra pal = iterador.next();
-      mayoresApariciones.agrega(pal.getApariciones());
+      mayoresApariciones.agrega(pal);
       i++;
     }
     DibujaArbol ar = new DibujaArbol(mayoresApariciones);
@@ -87,12 +87,12 @@ public class ManejaPalabras{
   public String obtieneAVL(){
     if(palabras == null || palabras.getLongitud() == 0) return "";
     // Tengo que generar la lista de mayores apariciones
-    Lista<Integer> mayoresApariciones = new Lista<>();
+    Lista<Palabra> mayoresApariciones = new Lista<>();
     Iterator<Palabra> iterador = palabras.iterator();
     int i = 0;
     while(iterador.hasNext() && i < 15){
       Palabra pal = iterador.next();
-      mayoresApariciones.agrega(pal.getApariciones());
+      mayoresApariciones.agrega(pal);
       i++;
     }
     DibujaArbol ab = new DibujaArbol(mayoresApariciones);
@@ -111,7 +111,7 @@ public class ManejaPalabras{
     "\n<div class='w3-content' style='max-width:2000px;'><div class='w3-container w3-content w3-center w3-padding-64' style='max-width:1000px' id='band'>"+
     "\n<h2 class='w3-wide'><a href='index.html'>Analizador de Palabras</a></h2>\n<p class='w3-opacity'><i>Ciencias de la Computación: Estructuras de Datos</i></p>\n";
 
-    ap+= "<div style='margin-left: 20px; margin-right: 20px; border: 3px font-family: Garamond'> Lista de palabras: "+ palabras.toString()+"</div>\n<br><div style = 'display: table-cell'>\n";
+    ap+= "<div style='margin-left: 20px; margin-right: 20px; border: 3px font-family: Garamond'> Lista de palabras: "+ imprimePalabras()+"</div>\n<br><div style = 'display: table-cell'>\n";
     ap+="\n</ol>\n</div>\n<div class='w3-black' id='tour'>\n<div class='w3-container w3-content w3-padding-64' style='max-width:800px'>"+
     "\n<h2 class='w3-wide w3-center'>Porcentaje de apariciones: las palabras con mayor frecuencia</h2>"+
     "\n<p class='w3-opacity w3-center'><i>A continuación se presentan los análisis graficados</i></p><br>";
@@ -124,5 +124,15 @@ public class ManejaPalabras{
     ap+=obtieneRojinegro();
     ap+="\n</div></div></div></body></html>";
     return ap;
+  }
+  /**
+  * Método para imprimir las palabras con las apariciones que cada una tiene:
+  * @return String
+  */
+  public  String imprimePalabras(){
+    String res = "";
+    for(Palabra palabra : palabras)
+      res+= palabra.toString_info()+", ";
+    return res; 
   }
 }

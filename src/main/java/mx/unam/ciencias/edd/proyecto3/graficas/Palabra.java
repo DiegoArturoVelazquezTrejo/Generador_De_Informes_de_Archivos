@@ -23,7 +23,13 @@ public class Palabra implements Comparable<Palabra>{
   * @return String
   */
   @Override public String toString(){
-    return String.format("  '%s' con %d apariciones  ", palabra, apariciones); 
+    return String.format("%s", palabra);
+  }
+  /**
+  * @return String
+  */
+  public String toString_info(){
+    return String.format("  '%s' con %d apariciones  ", palabra, apariciones);
   }
   /* Método para comparar dos palabras (de acuerdo a su número de apariciones )*/
   @Override
