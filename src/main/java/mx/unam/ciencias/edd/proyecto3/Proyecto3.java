@@ -22,7 +22,7 @@ public class Proyecto3{
     String directorio = "";
     // Vamos a agregar todos los argumentos
     for(int i = 0; i < args.length; i++){
-      archivos.agrega(args[i]);
+      if(!archivos.contiene(args[i]))archivos.agrega(args[i]);
     }
     // Verificamos si el usuario pasó el directorio
     int posicion = archivos.indiceDe("-o");

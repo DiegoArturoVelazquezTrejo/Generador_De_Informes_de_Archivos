@@ -55,25 +55,15 @@ public class GraficaPastel{
     float porcentaje;
     angulo = 0;
     angulo_pasado = 0;
-    int i = 0;
     for(Palabra palabra : palabras){
       angulo = angulo + ((double)(palabra.getApariciones() * 360)/(double)totalApariciones);
       x = radio * Math.cos(Math.toRadians(angulo)) + nuevoCentroX;
       y = radio * Math.sin(Math.toRadians(angulo)) + nuevoCentroY;
-      angulo_etiqueta = angulo_pasado + (angulo - angulo_pasado)/3;
+      angulo_etiqueta = Math.ceil(angulo_pasado) + (Math.ceil(angulo) - Math.floor(angulo_pasado))/2;
       xe = radio * Math.cos(Math.toRadians(angulo_etiqueta)) + nuevoCentroX;
       ye = radio * Math.sin(Math.toRadians(angulo_etiqueta)) + nuevoCentroY;
-      if(i % 2 == 0){
-        ye+=12;
-        xe+=5;
-      }
-      else{
-        ye-=12;
-        xe-=5;
-      }
-      i++;
       porcentaje = ((float)palabra.getApariciones()/(float)totalApariciones) * 100;
-      puntos.agrega(new Punto(x, y, palabra.getPalabra(), Math.floor(porcentaje), xe, ye));
+      puntos.agrega(new Punto(x, y, palabra.getPalabra(), Math.floor(porcentaje), xe, ye)); 
       angulo_pasado = angulo;
     }
   }
@@ -92,7 +82,8 @@ public class GraficaPastel{
     for(Punto punto : puntos){
       linea= dibujaLinea(punto.x, punto.y);
       etiqueta = dibujaEtiqueta(punto.dato, punto.porcentaje, punto.x_etiqueta, punto.y_etiqueta, i++);
-      cadena+=linea+etiqueta;
+      if(punto.porcentaje > 0)
+         cadena+=linea+etiqueta;
     }
     cadena+=dibujaLinea(nuevoCentroX+radio, nuevoCentroY);
     cadena+="\n</svg>\n";
@@ -126,9 +117,14 @@ public class GraficaPastel{
   public String dibujaEtiqueta(String dato, double porcentaje, double x1, double y1, int i){
     if(i % 2 == 0) y1-=20;
     else y1+=20;
-    String[] colores = {"orange", "red", "#ECFF14","#FA4BEA", "#46FA5B", "pink", "white","#D2F2FF"};
+    String[] colores = {"orange", "#ECFF14","#FA4BEA", "#46FA5B", "pink", "white","#D2F2FF"};
     String color = colores[(int)(Math.random()*colores.length)];
-    return "<text x= '"+x1+"' y= '"+y1+"' text-anchor='middle' fill='"+ color +"' font-size='15px' font-family='Fira Mono' dy='.3em'>"+
+    String tamanio;
+    if(dato.length() > 9)
+	tamanio = "10px";
+    else
+	tamanio = "15px"; 
+    return "<text x= '"+x1+"' y= '"+y1+"' text-anchor='middle' fill='"+ color +"' font-size='"+tamanio+"' font-family='Fira Mono' dy='.3em'>"+
     dato+ " "+(int)porcentaje+"% "+"</text>\n";
   }
   /**

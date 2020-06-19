@@ -43,9 +43,14 @@ public class DibujaElmArbol{
     if(c.equals(Color.NEGRO) || c.equals(Color.ROJO))
       colorletra = "white";
     else
-      colorletra = "Black";
+      colorletra = "red";
+    String tamanio; 
+    if(vertice.get().toString().length() > 15)
+	tamanio = "8px";
+    else
+	tamanio = "10px"; 
     return "<circle cx= '"+x+"' cy= '"+y+"' r='16' stroke='white' fill='"+color+"'  /> \n<text x= '"+x+"' y= '"+y1+
-    "' text-anchor='middle' fill='"+ colorletra+"' font-size='10px' font-family='Arial' dy='.1em'>"+
+    "' text-anchor='middle' fill='"+ colorletra+"' font-size='"+tamanio+"' font-family='Arial' dy='.1em'>"+
     vertice.get()+"</text>\n";
   }
 

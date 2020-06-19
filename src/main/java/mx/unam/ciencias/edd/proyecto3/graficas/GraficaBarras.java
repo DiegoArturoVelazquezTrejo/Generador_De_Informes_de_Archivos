@@ -57,10 +57,17 @@ public class GraficaBarras{
     x_coordenada = inicioX;
     altura = porcentaje = 0;
     longitudXcuadrado = longitudBarras / palabras.getLongitud();
+    int i = 0;
+    int coordY = inicioY; 
     for(Palabra palabra : palabras){
       porcentaje = (palabra.getApariciones() * 100) / totalApariciones;
       altura = (palabra.getApariciones() * alturaBarras) / totalApariciones;
-      puntos.agrega(new Punto(x_coordenada, inicioY, palabra.getPalabra(), porcentaje, altura));
+      if((i % 2) == 0)
+	  coordY = inicioY;
+      else
+	  coordY = inicioY + 8;
+      i++; 
+      puntos.agrega(new Punto(x_coordenada, coordY, palabra.getPalabra(), porcentaje, altura));
       x_coordenada+= longitudXcuadrado;
     }
   }
@@ -105,9 +112,14 @@ public class GraficaBarras{
     double coorX = punto.x + (longitudXcuadrado)/2;
     double coordY = inicioY-punto.height-10;
     double cY = punto.y + 10;
+    String tamano;
+    if(punto.dato.length() > 10)
+	tamano = "10px";
+    else
+	tamano = "12px"; 
     String etiquetaPorcentaje = "<text x= '"+coorX+"' y= '"+coordY+"' text-anchor='middle' fill='white' font-size='12px' font-family='Fira Mono' dy='0.5em'>"+
     punto.porcentaje + "%"+"</text>\n";
-    return etiquetaPorcentaje+"<text x= '"+coorX+"' y= '"+cY+"' text-anchor='middle' fill='white' font-size='13px' font-family='Fira Mono' dy='0.5em'>"+
+    return etiquetaPorcentaje+"<text x= '"+coorX+"' y= '"+cY+"' text-anchor='middle' fill='white' font-size='"+tamano+"' font-family='Fira Mono' dy='0.5em'>"+
     punto.dato+"</text>\n";
   }
   /**

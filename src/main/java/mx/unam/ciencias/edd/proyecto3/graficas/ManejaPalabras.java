@@ -111,7 +111,7 @@ public class ManejaPalabras{
     "\n<div class='w3-content' style='max-width:2000px;'><div class='w3-container w3-content w3-center w3-padding-64' style='max-width:1000px' id='band'>"+
     "\n<h2 class='w3-wide'><a href='index.html'>Analizador de Palabras</a></h2>\n<p class='w3-opacity'><i>Ciencias de la Computación: Estructuras de Datos</i></p>\n";
 
-    ap+= "<div style='margin-left: 20px; margin-right: 20px; border: 3px font-family: Garamond'> Lista de palabras: "+ imprimePalabras()+"</div>\n<br><div style = 'display: table-cell'>\n";
+    ap+= "\n<br><div style = 'display: table-cell'>\n";
     ap+="\n</ol>\n</div>\n<div class='w3-black' id='tour'>\n<div class='w3-container w3-content w3-padding-64' style='max-width:800px'>"+
     "\n<h2 class='w3-wide w3-center'>Porcentaje de apariciones: las palabras con mayor frecuencia</h2>"+
     "\n<p class='w3-opacity w3-center'><i>A continuación se presentan los análisis graficados</i></p><br>";
@@ -122,7 +122,8 @@ public class ManejaPalabras{
     ap+=obtieneAVL();
     ap+="\n<h2 class='w3-wide w3-center'>Árbol Rojinegro</h2>";
     ap+=obtieneRojinegro();
-    ap+="\n</div></div></div></body></html>";
+    ap+="\n</div></div></div>";
+    ap+="<div style='margin-left: 20px; margin-bottom: 30px; margin-right: 20px; border: 3px font-family: Garamond'> Lista de palabras: "+ imprimePalabras()+"<br><br></div></body></html>";
     return ap;
   }
   /**
